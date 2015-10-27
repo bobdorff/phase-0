@@ -32,5 +32,5 @@ _Which parts of the challenge did you find tedious?_
 
 No part of this challenge was particularly tedious to me. Honestly, the most boring and mindless part was sending the photo of my sitemap from my phone to my Mac!
 
-Oh, and here's my sitemap: ![Sitemap](phase-0/week-2/imgs/site-map.jpg)
+Oh, and here's my sitemap: ![Sitemap](bobdorff/phase-0/week-2/imgs/site-map.jpg)
 
