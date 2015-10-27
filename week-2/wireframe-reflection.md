@@ -1,6 +1,6 @@
-Here are my wireframes: ![Wireframe Index](/week-2/wireframe-index.jpg)
+Here are my wireframes: ![Wireframe Index](/week-2/imgs/wireframe-index.jpg)
 
-[Wireframe Blog Index](/week-2/wireframe-blog-index.jpg)
+![Wireframe Blog Index](/week-2/imgs/wireframe-blog-index.jpg)
 
 _What is a wireframe?_
 It's a visual representation of how a site will be laid out. It does not necessarily feature all of the details that will be present when a site is completed, instead it is a two-dimensional blueprint that provides a rouch idea of where all the site's elements will end up.
