@@ -8,6 +8,7 @@ html {
     width: 99%;
     margin: auto;
     margin-top: 20px;
+    margin-bottom: -20px;
     clear: both;
 }
 
@@ -45,10 +46,18 @@ header {
 }
 .columns-left {
    float: left;
-    width:
+    max-width: 40%;
+    margin-left: 25px;
 }
 .columns-right {
     float: right;
+    max-width: 40%;
+    margin-right: 25px;
+    margin-top: -3px;
+}
+
+li {
+	margin-bottom: 20px;
 }
 .bottom {
     clear:both;
@@ -59,6 +68,29 @@ header {
 
 .geico {
   text-align: center;
+  font-size: 60%;
+  margin-left: 23%;
+  margin-right: 23%;	 	
 }
 
+.comments {
+	font-size: 75%;
+}
 
+.copyright { 
+font-size: 50%;
+}
+
+/*
+1. What is important to know when linking to a CSS file?
+	As with any link, it's critical to know correct path to link. Personally, I think it's important to create a manageable file heirarchy so these links don't get too convoluted!
+2. What tricks did you use to help with positioning. How hard was it getting things to look right?
+	This challenge took my pair and I a long time, far beyond the hour we initially set aside for pairing. All that time was worth it, however, because we eventually got the site looking like the original. We used a ton of classes to set different elements apart and position them properly. Floats and clears were also crucial to setting everything up and preventing elements from overlapping. Discovering how the Max-Width property works with floats was also an eye-opener.
+3. What CSS did you use to modify elements?
+	Practically everything on the page is being modified with CSS, including the colors of the fonts, the colors of links before and after they are clicked and the sizes of individual fonts throughout. Beyond that, we used CSS to position everything and set the spacing between different parts of the page. 
+4. Did you modify the HTML to use classes or ids?
+	All over the place! We generally stuck with classes because that helped us consolidate some of our code, but there are a ton of different classes in the finished product. We generally used these in conjunction with the semantic tags as well as div and span to set apart different pieces of page or even of a single line of text. When naming these classes we aimed for easily-understood names we wouldn't forget easily. 
+5. Which site has cleaner code that follows more best practices?
+	The original site is both cleaner and follows best practices better, though it is based around older versions of HTML that are outdated. Some of the styling they are completing with HTML would be done in CSS now, I believe. The original site is definitely better organized and much cleaner than our implementation, in part because we were working off a code base built when we knew basically nothing. We didn't do a lot to clean up that original code, and in some cases we used CSS to work around its faults. While that resulted in a functional site, it made for ugly code!
+			 
+*/
