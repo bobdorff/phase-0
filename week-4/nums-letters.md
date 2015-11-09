@@ -32,6 +32,6 @@ _What are local variables. Why use them?_
 _How was this challenge?_
 	This challenge was good overall. It took me some time to remember how to work with methods, but I got there eventually. 
 
-(Defining variables)[https://github.com/bobdorff/phase-0/blob/master/week-4/defining-variables.rb]
-(Simple String Methods)[https://github.com/bobdorff/phase-0/blob/master/week-4/simple-string.rb]
-(Local variables and basic arithmetical operations)[https://github.com/bobdorff/phase-0/blob/master/week-4/basic-math.rb]
+[Defining variables](https://github.com/bobdorff/phase-0/blob/master/week-4/defining-variables.rb)
+[Simple String Methods](https://github.com/bobdorff/phase-0/blob/master/week-4/simple-string.rb)
+[Local variables and basic arithmetical operations](https://github.com/bobdorff/phase-0/blob/master/week-4/basic-math.rb)
