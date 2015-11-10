@@ -1,0 +1,33 @@
+* {
+    font-family: Courier;
+}
+
+header {
+    background-color: pink;
+    width: 100%;
+    margin-bottom: -16px;
+}
+
+.column-1 {
+    background-color: red;
+    float: left;
+    width: 50%;
+}
+
+a {
+    text-decoration:none;
+}
+a:hover {
+    font-style:italic;
+}
+
+.column-2 {
+    background-color: blue;
+    float: right;
+    width: 50%;
+}
+footer {
+    clear:both;
+    width: 100%;
+    background-color: green;
+}
