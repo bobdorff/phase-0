@@ -68,6 +68,7 @@ end
     end
   return hey_i_like_that
 end
+# Honestly, not sure what else could be done to refactor. I could put more stuff on single lines, but that seems like it might undermine readability...I'm sure there's a better way to do things, but I'm struggling to identify it!
 
 
 # 4. Reflection
