@@ -41,19 +41,83 @@ STEPS
 
 # Initial Solution
 
+# class BingoBoard
+
+# attr_accessor :bingo_board
+# attr_accessor :letter_array
+# attr_accessor :number_array
+# attr_accessor :letter_hash
+# attr_accessor :bingo_letter
+# attr_accessor :bingo_number
+
+#   def initialize(board)
+#     @bingo_board = board
+#     @letter_array = [ "B", "I", "N", "G", "O" ]
+#     #@number_array = (1..75).to_a
+#     @letter_hash = { 
+#     "B" => 0,
+#     "I" => 1,
+#     "N" => 2,
+#     "G" => 3,
+#     "O" => 4,
+#   }
+#     @bingo_letter = nil
+#     @bingo_number = nil
+#   end
+
+
+#   def call
+#    @bingo_board[2][2] = "FREE"
+#    @bingo_letter = @letter_hash[@letter_array.sample]
+#       if @bingo_letter == 0
+#         @bingo_number = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].sample
+#       elsif @bingo_letter == 1
+#         @bingo_number = [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30].sample
+#       elsif @bingo_letter == 2
+#         @bingo_number = [31,32,33,34,35,36,37,38,39,40,41,42,43,44,45].sample
+#       elsif @bingo_letter == 3
+#         @bingo_number  = [46,47,48,49,50,51,52,53,54,55,56,57,58,59,60].sample
+#       else
+#         @bingo_number = [61,62,63,64,65,66,67,68,69,70,71,72,73,74,75].sample
+#       end
+#    #@bingo_number = @number_array.sample
+#   end
+
+
+#   def check
+#   @bingo_board[@bingo_letter].map! do |check_num|
+#     if check_num == @bingo_number
+#     check_num = "X"
+#     else
+#       check_num
+#     end 
+#   end
+
+
+#   def puts_board
+#   puts "B " + @bingo_board[0].to_s 
+#   puts "I " + @bingo_board[1].to_s 
+#   puts "N " + @bingo_board[2].to_s
+#   puts "G " + @bingo_board[3].to_s
+#   puts "O " + @bingo_board[4].to_s 
+#   end
+#  end
+
+# end
+
+
+
+
+
+# # Refactored Solution
+
 class BingoBoard
 
-attr_accessor :bingo_board
-attr_accessor :letter_array
-attr_accessor :number_array
-attr_accessor :letter_hash
-attr_accessor :bingo_letter
-attr_accessor :bingo_number
+attr_accessor :bingo_board, :letter_array, :number_array, :letter_hash, :bingo_letter, :bingo_number
 
   def initialize(board)
     @bingo_board = board
     @letter_array = [ "B", "I", "N", "G", "O" ]
-    #@number_array = (1..75).to_a
     @letter_hash = { 
     "B" => 0,
     "I" => 1,
@@ -64,9 +128,8 @@ attr_accessor :bingo_number
     @bingo_letter = nil
     @bingo_number = nil
   end
-
-
   def call
+   @bingo_board[2][2] = "FREE"
    @bingo_letter = @letter_hash[@letter_array.sample]
       if @bingo_letter == 0
         @bingo_number = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].sample
@@ -75,14 +138,11 @@ attr_accessor :bingo_number
       elsif @bingo_letter == 2
         @bingo_number = [31,32,33,34,35,36,37,38,39,40,41,42,43,44,45].sample
       elsif @bingo_letter == 3
-        @bingo_number  = [61,62,63,64,65,66,67,68,69,70,71,72,73,74,75].sample
+        @bingo_number  = [46,47,48,49,50,51,52,53,54,55,56,57,58,59,60].sample
       else
         @bingo_number = [61,62,63,64,65,66,67,68,69,70,71,72,73,74,75].sample
       end
-   #@bingo_number = @number_array.sample
   end
-
-
   def check
   @bingo_board[@bingo_letter].map! do |check_num|
     if check_num == @bingo_number
@@ -91,8 +151,6 @@ attr_accessor :bingo_number
       check_num
     end 
   end
-
-
   def puts_board
   puts "B " + @bingo_board[0].to_s 
   puts "I " + @bingo_board[1].to_s 
@@ -101,14 +159,7 @@ attr_accessor :bingo_number
   puts "O " + @bingo_board[4].to_s 
   end
  end
-
 end
-
-
-
-
-
-# # Refactored Solution
 
 
 
