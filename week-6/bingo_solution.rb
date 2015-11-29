@@ -109,7 +109,7 @@ STEPS
 
 
 
-# # Refactored Solution
+# REFACTORPALOOZA 2015
 
 class BingoBoard
 
@@ -117,40 +117,38 @@ attr_accessor :bingo_board, :letter_array, :number_array, :letter_hash, :bingo_l
 
   def initialize(board)
     @bingo_board = board
-    @letter_array = [ "B", "I", "N", "G", "O" ]
+    @letter_array = [ 0, 1, 2, 3, 4 ]
     @letter_hash = { 
-    "B" => 0,
-    "I" => 1,
-    "N" => 2,
-    "G" => 3,
-    "O" => 4,
+    0 => "B",
+    1 => "I",
+    2 => "N",
+    3 => "G",
+    4 => "O",
   }
     @bingo_letter = nil
     @bingo_number = nil
   end
+
   def call
-   @bingo_board[2][2] = "FREE"
-   @bingo_letter = @letter_hash[@letter_array.sample]
+   @bingo_letter = @letter_array.sample
+   p @letter_hash[@bingo_letter]
       if @bingo_letter == 0
-        @bingo_number = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].sample
+        @bingo_number = (1..15).to_a.sample
       elsif @bingo_letter == 1
-        @bingo_number = [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30].sample
+        @bingo_number = (16..30).to_a.sample
       elsif @bingo_letter == 2
-        @bingo_number = [31,32,33,34,35,36,37,38,39,40,41,42,43,44,45].sample
+        @bingo_number = (31..45).to_a.sample
       elsif @bingo_letter == 3
-        @bingo_number  = [46,47,48,49,50,51,52,53,54,55,56,57,58,59,60].sample
+        @bingo_number  = (46..60).to_a.sample
       else
-        @bingo_number = [61,62,63,64,65,66,67,68,69,70,71,72,73,74,75].sample
+        @bingo_number = (61..75).to_a.sample
       end
   end
+
   def check
-  @bingo_board[@bingo_letter].map! do |check_num|
-    if check_num == @bingo_number
-    check_num = "X"
-    else
-      check_num
-    end 
+  @bingo_board[@bingo_letter].map! { |check_num| check_num == @bingo_number ? check_num = "X" : check_num }   
   end
+
   def puts_board
   puts "B " + @bingo_board[0].to_s 
   puts "I " + @bingo_board[1].to_s 
@@ -158,31 +156,39 @@ attr_accessor :bingo_board, :letter_array, :number_array, :letter_hash, :bingo_l
   puts "G " + @bingo_board[3].to_s
   puts "O " + @bingo_board[4].to_s 
   end
- end
 end
 
+def tru_board
+  @board = [
+    (1..15).to_a.sample(5), 
+    (16..30).to_a.sample(5), 
+    (31..45).to_a.sample(5), 
+    (46..60).to_a.sample(5),
+    (61..75).to_a.sample(5),
+  ]
+  @board[2][2] = "FREE"    
+end
 
-
-# #DRIVER CODE (I.E. METHOD CALLS) GO BELOW THIS LINE
- 
-    board = [ 
-    [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].sample(5), 
-    [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30].sample(5), 
-    [31,32,33,34,35,36,37,38,39,40,41,42,43,44,45].sample(5), 
-    [46,47,48,49,50,51,52,53,54,55,56,57,58,59,60].sample(5),
-    [61,62,63,64,65,66,67,68,69,70,71,72,73,74,75].sample(5),
-    ]
-    
-# board = [[47, 44, 71, 8, 88],
-#         [22, 69, 75, 65, 73],
-#         [83, 85, 97, 89, 57],
-#         [25, 31, 96, 68, 51],
-#         [75, 70, 54, 80, 83]]
-
- new_game = BingoBoard.new(board)
+ tru_board
+ new_game = BingoBoard.new(@board)
  p new_game.call
  new_game.check
  new_game.puts_board
 
-
+=begin
 #Reflection
+How difficult was pseudocoding this challenge? What do you think of your pseudocoding style?
+  I found it relatively easy to pseudocode this challenge, though my style is constantly evolving and improving. I am getting better at breaking up problems and creating multi-step solutions at the pseudocoding stage, which makes it signifcantly easier to figure out where problems lie once I actually start programming.
+What are the benefits of using a class for this challenge?
+  Using a class allows me to create a system that generates randomized boards. I can then plug those randomized boards into the class and still have everything function. Using a class makes the methods I created more flexible, because I can change what gets fed to them. 
+How can you access coordinates in a nested array?
+  You can access the information deep within an nested array by using the index for the top-level array you want to access and then using the index for the information you want to pull out of the subarrays.
+What methods did you use to access and modify the array?
+  I used #map and #sample in this challenge. Map is a great tool, I use it all the time to efficiently modify arrays in place. Sample was useful because so much of this challenge focused on random number generation. I also used #to_s to make my output pretty.
+Give an example of a new method you learned while reviewing the Ruby docs. Based on what you see in the docs, what purpose does it serve, and how is it called?
+  Didn't learn a new method, but did learn more about how #to_a works. Using it as I did throughout this challenge is a huge time and space saver when working with ranges of numbers that need to be put into an array. It gets called on any range of numbers, splits the up into individual numbers and tranforms them into an array you can manipulate further. 
+How did you determine what should be an instance variable versus a local variable?
+  Instance variables were used whenever I needed to access the information in a method that did not generate that information. Whenever data gets passed around, I had to use an instance variable.
+What do you feel is most improved in your refactored solution?
+  Readability and clutter. I got rid of a lot of unncessary numbers by using ranges and cleaned up the structure overall. I also made it actually output a letter number combination.
+=end
