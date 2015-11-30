@@ -41,6 +41,47 @@ STEPS
 
 # Initial Solution
 
+
+# I spent [#] hours on this challenge.
+
+
+# Release 0: Pseudocode
+# Outline:
+
+# Create a method to generate a letter ( b, i, n, g, o) and a number (1-100)
+  #fill in the outline here
+
+# Check the called column for the number called.
+  #fill in the outline here
+
+# If the number is in the column, replace with an 'x'
+  #fill in the outline here
+
+# Display a column to the console
+  #fill in the outline here
+
+# Display the board to the console (prettily)
+  #fill in the outline here
+=begin
+  
+PSEUDOCODE
+Input: prepopulated bingo board
+Output: Bingo board with correct numbers replaced by 'x'
+STEPS
+1. Create a method called "call"
+1a. Method 'call' contains a hash and an array
+1b. "Call's" hash consists of keys BINGO valued at 0-4
+1c. "Call's" array is a range of numbers from 1-100
+1d. When 'call' gets called, it pulls a random key from hash and a random number from the array
+
+2. Using the value of the hash key to pick the proper array from the bingo board, compare array number to numbers listed in that array
+2a. If number is a match, replace that number with 'x' in place.
+2b. Transpose the arrays so the columns are rows in accordance with the way bingo boards are set up.
+3. print the bingo board so that each array is on a newline. 
+=end
+
+# Initial Solution
+
 # class BingoBoard
 
 # attr_accessor :bingo_board
@@ -53,7 +94,7 @@ STEPS
 #   def initialize(board)
 #     @bingo_board = board
 #     @letter_array = [ "B", "I", "N", "G", "O" ]
-#     #@number_array = (1..75).to_a
+#     @number_array = (1..100).to_a
 #     @letter_hash = { 
 #     "B" => 0,
 #     "I" => 1,
@@ -80,7 +121,6 @@ STEPS
 #       else
 #         @bingo_number = [61,62,63,64,65,66,67,68,69,70,71,72,73,74,75].sample
 #       end
-#    #@bingo_number = @number_array.sample
 #   end
 
 
@@ -95,18 +135,15 @@ STEPS
 
 
 #   def puts_board
-#   puts "B " + @bingo_board[0].to_s 
-#   puts "I " + @bingo_board[1].to_s 
-#   puts "N " + @bingo_board[2].to_s
-#   puts "G " + @bingo_board[3].to_s
-#   puts "O " + @bingo_board[4].to_s 
+#   puts @bingo_board.transpose[0].to_s 
+#   puts @bingo_board.transpose[1].to_s 
+#   puts @bingo_board.transpose[2].to_s
+#   puts @bingo_board.transpose[3].to_s
+#   puts @bingo_board.transpose[4].to_s 
 #   end
 #  end
 
 # end
-
-
-
 
 
 # REFACTORPALOOZA 2015
@@ -150,11 +187,11 @@ attr_accessor :bingo_board, :letter_array, :number_array, :letter_hash, :bingo_l
   end
 
   def puts_board
-  puts "B " + @bingo_board[0].to_s 
-  puts "I " + @bingo_board[1].to_s 
-  puts "N " + @bingo_board[2].to_s
-  puts "G " + @bingo_board[3].to_s
-  puts "O " + @bingo_board[4].to_s 
+  puts @bingo_board.transpose[0].to_s 
+  puts @bingo_board.transpose[1].to_s 
+  puts @bingo_board.transpose[2].to_s
+  puts @bingo_board.transpose[3].to_s
+  puts @bingo_board.transpose[4].to_s 
   end
 end
 
@@ -166,7 +203,7 @@ def tru_board
     (46..60).to_a.sample(5),
     (61..75).to_a.sample(5),
   ]
-  @board[2][2] = "FREE"    
+  @board[2][2] = "FREE"   
 end
 
  tru_board
@@ -186,7 +223,7 @@ How can you access coordinates in a nested array?
 What methods did you use to access and modify the array?
   I used #map and #sample in this challenge. Map is a great tool, I use it all the time to efficiently modify arrays in place. Sample was useful because so much of this challenge focused on random number generation. I also used #to_s to make my output pretty.
 Give an example of a new method you learned while reviewing the Ruby docs. Based on what you see in the docs, what purpose does it serve, and how is it called?
-  Didn't learn a new method, but did learn more about how #to_a works. Using it as I did throughout this challenge is a huge time and space saver when working with ranges of numbers that need to be put into an array. It gets called on any range of numbers, splits the up into individual numbers and tranforms them into an array you can manipulate further. 
+  Transpose! I found it and it changed how I approached the challenge. It regroups nested arrays based on their index numbers, which was perfect for this challenge. I was able to use it to reformat the information after I had already done the heavy lifting of modifying each array. 
 How did you determine what should be an instance variable versus a local variable?
   Instance variables were used whenever I needed to access the information in a method that did not generate that information. Whenever data gets passed around, I had to use an instance variable.
 What do you feel is most improved in your refactored solution?
