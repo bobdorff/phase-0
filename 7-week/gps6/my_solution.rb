@@ -4,18 +4,19 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
+
 # => Require relative means the program requires a separate file to run, in the case of require relative, the program will look in the directory relative to where the original ruby file is. With relative, the program will look through the load path. 
-#
+
+
+
 require_relative 'state_data'
 
 class VirusPredictor
-# sets the arguments to instance variables/defines how many arguments are required
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
-#calls two methods defined further down
   def virus_effects
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -43,24 +44,4 @@ STATE_DATA.each do |state, pop|
   VirusPredictor.new(state, pop[:population_density], pop[:population]).virus_effects
 end
 
-#=======================================================================
-
-# DRIVER CODE
- # initialize VirusPredictor for each state
-
-
-# alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-# alabama.virus_effects
-
-# jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
-# jersey.virus_effects
-
-# california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
-# california.virus_effects
-
-# alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-# alaska.virus_effects
-
-
-#=======================================================================
 # Reflection Section
