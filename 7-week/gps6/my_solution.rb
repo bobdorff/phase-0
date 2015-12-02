@@ -45,3 +45,13 @@ STATE_DATA.each do |state, pop|
 end
 
 # Reflection Section
+
+What are the differences between the two different hash syntaxes shown in the state_data file?
+  The system with the rockets uses strings as the keys for each value while the other notation is based around symbols for each key. 
+What does require_relative do? How is it different from require?
+  It means that another file must be present for the code in this file to run. It differs from require because it will begin its search for the other file in the directory that the initializing file is in. That means it starts its search in a location relative to the file that asked for the required file. By contrast, require by itself will begin its search for the required file in the directory that contains the ruby intall.
+What are some ways to iterate through a hash?
+  You can use each or variations of each that will target the key or value or both parts of each item in the hash. In each case, what you are accessing with the variables you create between the pipes that are part of the code block will change, so you need to understand how the method you choose will reference those variables.
+When refactoring virus_effects, what stood out to you about the variables, if anything?
+  The instance variables were not being used efficiently. Because they are accessible throughout the entire cl
+What concept did you most solidify in this challenge?
