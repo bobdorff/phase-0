@@ -50,8 +50,9 @@ console.log(michaelPhelps.constructor === Athlete)
 console.log(michaelPhelps.name + " " + michaelPhelps.sport + " " + michaelPhelps.quote)
 
 // Reflection
-What JavaScript knowledge did you solidify in this challenge?
-	I keep getting better at understanding JavaScript syntax. That's been a major adjustment coming from the relative clarity of ruby. Remembering to include the proper parentheses, brackets, commas and semicolons gets easier with each project.
-What are constructor functions?
-	
-How are constructors different from Ruby classes (in your research)?
+// What JavaScript knowledge did you solidify in this challenge?
+// 	I keep getting better at understanding JavaScript syntax. That's been a major adjustment coming from the relative clarity of ruby. Remembering to include the proper parentheses, brackets, commas and semicolons gets easier with each project.
+// What are constructor functions?
+// 	A constructor function is like a standard function, but it saves us time because it allows us to create multiple instances of the same object that feature different properties. When we create a constructor function, we establish variables that are linked to properties that all new instances of that object will have. That means we don't have to recreate the function every time we want a new object with those properties. 
+// How are constructors different from Ruby classes (in your research)?
+//   I'm honestly still working it out, but it seems like the big difference has to do with what methods are available to objects that are either classes or constructors. A class grants its instances a range of built in ruby methods and can access methods that are available to all classes. In JavaScript, a constructor function simply creates new objects with certain properties. It does not give those objects any methods simply because they are created as part of a constructor function. You need to create a prototype for the function that contains functions that can be used to manipulate the data connected to objects that are created using the constructor function. That's probably very unclear, but I'm still working through exactly how all this connects!
