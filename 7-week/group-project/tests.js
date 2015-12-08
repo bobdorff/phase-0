@@ -56,7 +56,7 @@ console.log(sum(numbers));
 console.log(mean(numbers));
 console.log(median(numbers));
 
-
+	
 // __________________________________________
 // Tests:  Do not alter code below this line.
 oddLengthArray  = [1, 2, 3, 4, 5, 5, 7]
