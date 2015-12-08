@@ -90,6 +90,12 @@ function average(array){
 // __________________________________________
 // Reflect
 
+// What did you learn about adding functions to objects?
+//   Adding functions seems to work like adding any property, so you can use dot notation or bracket notation to get inside an object and add a function like you would normally.
+// How did you iterate over nested arrays in JavaScript?
+//   We used a for loop to iterate over an array, but we didn't have a circumstance where we needed to iterate on any arrays. We did access nested information, however. It works similar to ruby. You simply list each level of nesting as you work your way through the list. 
+// Were there any new methods you were able to incorporate? If so, what were they and how did they work?
+//   Nothing new, though I did use push as instructed. I hadn't used that much in a JavaScript context so it was good to get a refresher. 
 
 
 
