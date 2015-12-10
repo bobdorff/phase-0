@@ -19,3 +19,5 @@ What is a primary key? What is a foreign key? How can you determine which is whi
 	Foreign keys reference primary keys, and as a result can be duplicated across a table. 
 How can you select information out of a SQL database? What are some general guidelines for that?
 	The syntax for selecting information from a SQL database is consistent, and is a simple chain of commands starting with "select" from there, you simply add more and more criteria until the command is complete. 
+
+	[My clueless database](https://github.com/bobdorff/phase-0/blob/master/8-week/database-intro/Screenshot%202015-12-10%2012.55.01.png)
