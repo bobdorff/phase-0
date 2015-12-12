@@ -175,7 +175,6 @@ var tally = function(totalVotes){
 }
 
 var selectWinners = function(tallies) {
-  var winner = []
    for( position in tallies ) {
      for( candidate in tallies[position] ) {
           if ( officers[position] === undefined){
@@ -186,10 +185,6 @@ var selectWinners = function(tallies) {
       }
     }
 }
-    
-
-    
-   
 
 // DRIVER CODE
 tally(votes);
@@ -201,8 +196,12 @@ console.log(voteCount)
 // __________________________________________
 // Reflection
 
-
-
+// What did you learn about iterating over nested objects in JavaScript?
+//   It requires a large amount of thought to ensure that you'll access the correct value. Pseudocoding was helpful in this regard, but the biggest trick for me to visualize all of this was sketching the relationship between different layers of data in  my notebook.
+// Were you able to find useful methods to help you with this?
+//   Our initial solution required a wider range of methods, but I basically rewrote things entirely for the refactor and stuck with using the #hasOwnProperty method. That allows me to check if an object already contains a selected property, which was useful when I needed to update the provided objects with the correct info. 
+// What concepts were solidified in the process of working through this challenge?
+//   I got much better at iteration involving JavaScript objects. While I understood for loops and their relation to arrays, I hadn't really pushed myself to get a good handle on how object iteration worked in JavaScript. Compared to working in Ruby, it can be a real pain, and the syntax can make it hard to understand exactly what property you'll be accessing without a copious amount of notes. During this challenge, I figured out how my brain conceptualizes these structures, which should help me on future projects. 
 
 
 
