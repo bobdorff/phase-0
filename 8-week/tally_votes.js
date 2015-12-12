@@ -73,70 +73,70 @@ var officers = {
 
 
 
-function addVote(office, name) {
-  if (voteCount[office].hasOwnProperty(name)) {
-    voteCount[office][name]++;
-  } else {
-    voteCount[office][name] = 1;
-  }   
-}
+// function addVote(office, name) {
+//   if (voteCount[office].hasOwnProperty(name)) {
+//     voteCount[office][name]++;
+//   } else {
+//     voteCount[office][name] = 1;
+//   }   
+// }
 
-var voterNames = [];
+// var voterNames = [];
 
-function getVoterNames() {
-  voterNames = Object.keys(votes);
-}
+// function getVoterNames() {
+//   voterNames = Object.keys(votes);
+// }
 
-var voterBallots = [];
+// var voterBallots = [];
 
-function getVoterBallots() {
-  for (var i = 0 ; i < voterNames.length; i++ ) {
-    var voter = voterNames[i];
-    var ballot = votes[voter];
-    voterBallots.push(ballot);
-  }
-}
+// function getVoterBallots() {
+//   for (var i = 0 ; i < voterNames.length; i++ ) {
+//     var voter = voterNames[i];
+//     var ballot = votes[voter];
+//     voterBallots.push(ballot);
+//   }
+// }
 
-function tallyVotes(array) {
-  for (var i = 0; i < voterBallots.length; i++ ) {
+// function tallyVotes(array) {
+//   for (var i = 0; i < voterBallots.length; i++ ) {
     
-    var ballot = voterBallots[i];
+//     var ballot = voterBallots[i];
     
-    Object.keys(ballot).forEach(function(office) {
-      addVote(office, ballot[office]);
-    });
+//     Object.keys(ballot).forEach(function(office) {
+//       addVote(office, ballot[office]);
+//     });
     
-  }
-}
+//   }
+// }
 
-function invert(object) {
-  var new_obj = {};
-  for (var prop in object) {
-    if(object.hasOwnProperty(prop)) {
-    new_obj[object[prop]] = prop;
-    }
-  }
-  return new_obj;
-}
+// function invert(object) {
+//   var new_obj = {};
+//   for (var prop in object) {
+//     if(object.hasOwnProperty(prop)) {
+//     new_obj[object[prop]] = prop;
+//     }
+//   }
+//   return new_obj;
+// }
  
   
 
-function voteSort() {
-  var offices = Object.keys(voteCount);
-    for ( var i = 0 ; i < offices.length; i++) {
-      var ballots = voteCount[offices[i]]; 
-      var invertedBallots = invert(ballots);
-      var voteTotals = Object.keys(invertedBallots);
-      voteTotals.sort(function(a, b){return b-a});
-      var winningTotal = voteTotals[0];
-      officers[offices[i]] = invertedBallots[winningTotal]
-  }
-}
+// function voteSort() {
+//   var offices = Object.keys(voteCount);
+//     for ( var i = 0 ; i < offices.length; i++) {
+//       var ballots = voteCount[offices[i]]; 
+//       var invertedBallots = invert(ballots);
+//       var voteTotals = Object.keys(invertedBallots);
+//       voteTotals.sort(function(a, b){return b-a});
+//       var winningTotal = voteTotals[0];
+//       officers[offices[i]] = invertedBallots[winningTotal]
+//   }
+// }
 
-getVoterNames();
-getVoterBallots();
-tallyVotes(voterBallots);
-voteSort();
+// getVoterNames();
+// getVoterBallots();
+// tallyVotes(voterBallots);
+// voteSort();
 
 /*
 var obj = { first: "John", last: "Doe" };
@@ -151,23 +151,51 @@ Object.keys(obj).forEach(function(key) {
 student who received the most votes. */
 
 // Pseudocode
-
-
-// __________________________________________
-// Initial Solution
+/* iterate through each object in the 'votes' object. if the object's contents match existing key value pairs in voteCount, increment each value in vote count by one, otherwise create a new student with their vote count set at one. 
 
 
 
-
+*/
 
 
 
 // __________________________________________
 // Refactored Solution
+var tally = function(totalVotes){
+  for( voter in totalVotes ) {
+    for( office in totalVotes[voter] ) {
+        var candidate = totalVotes[voter][office]
+      if( voteCount[office].hasOwnProperty(candidate) ) {
+        voteCount[office][candidate] ++ ;
+      } else { 
+        voteCount[office][candidate] = 1 ;
+      }
+    }
+  }
+}
 
+var selectWinners = function(tallies) {
+  var winner = []
+   for( position in tallies ) {
+     for( candidate in tallies[position] ) {
+          if ( officers[position] === undefined){
+            officers[position] = candidate
+          } else if ( tallies[position][candidate] > tallies[position][officers[position]]) {
+            officers[position] = candidate
+          }
+      }
+    }
+}
+    
 
+    
+   
 
-
+// DRIVER CODE
+tally(votes);
+selectWinners(voteCount)
+console.log(officers)
+console.log(voteCount)
 
 
 // __________________________________________
