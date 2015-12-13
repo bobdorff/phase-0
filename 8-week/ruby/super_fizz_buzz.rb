@@ -43,3 +43,10 @@ end
 
 # Reflection
 
+What concepts did you review or learn in this challenge?
+	Getting backing in the hang of ruby methods and remembering how to modify arrays in place. 
+What is still confusing to you about Ruby?
+	Nothing is particuarly confusing at this point, but there's still so much to learn. There will always be other methods that I could learn about or new ways to conceptualize a problem. 
+What are you going to study to get more prepared for Phase 1?
+	I'm working through all the review challenges and I'll probably bang through the rest of eloquent JavaScript.
+
