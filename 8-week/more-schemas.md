@@ -9,5 +9,5 @@ When would you use a many-to-many database? (Think generally, not in terms of th
 What is confusing about database schemas? What makes sense?
 	It makes sense in an abstract way to me, but I am still trying to identify situations when both of these schema will be useful. I'm sure that as we get more direct experience with data structures, I'll be able to identify situations where each is applicable. 
 
-	![here's a one to one schema](8-week/imgs/Screenshot%202015-12-10%2014.55.35.png)
+	![here's a one to one schema](/imgs/Screenshot%202015-12-10%2014.55.35.png)
 	![here's a many to one example](/8-week/imgs/Screenshot%202015-12-10%2015.02.52.png)
