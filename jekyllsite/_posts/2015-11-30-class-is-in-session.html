@@ -1,0 +1,25 @@
+---
+layout: post
+title:  "Class is in session"
+date:   2015-11-30
+categories: DBC blog
+---
+
+<p>Programming can often feel like an exercise in cutting corners. While cutting too many corners can result in buggy or confusing code, carefully picking where to expend your programming efforts can save you a bunch of time and make you feel like a programming super genius. One of the built in ways to cut out extra work when programming in Ruby involves classes which are chunks of code that contain methods and variables. Because Ruby is an object-oriented programming language, every chunk of code in the language, whether a method, a class, a variable, a string or an integer is an object. Once you create a class that contains certain methods and variables, you can create new objects that belong to that class. These objects can access all of the methods and variables that belong to that class, which means you only need to write all those bits of code once. </p>
+<p>To give you a better sense of how this works, we will create a new class and use it like we would in a program. If we wanted to create a class with methods to take an array of words and combine them into a single alphabetized string, it would look something like this:</p>
+<code><p>class Alphabetizer(words)</p>
+	<p>def initialize<br>
+		@words = words<br>end</p>
+		<p>def a_to_z<br>@words = @words.sort<br>end</p>
+		<p>def string_maker<br>@words = @words.join<br>end</p>
+		<p>end</p><p></code></p>
+		<p>Now that we have a defined class, we can create new objects that are instances of the class. When we do this, the new object is initialized in accordance with the stuff we wrote in the initialize method for our class. In this case, that means objects we initialize as part of this class will need to be an array of words so they can be set equal to @words.</p>
+		<p><code></p>
+		<p>word_set = Alphabetizer.new([location, comma, ballistic]) </p>
+		<p></code></p>
+		<p>Once that is done, we can call the class methods on our newly initialized object. </p>
+		<p><code></p>
+		<p>word_set.string_maker</p>
+		<p>word_set.a_to_z</p>
+		<p></code></p>
+		<p>To wrap up, we will talk about the variable @words. This is called an instance variable, and the methods we have in this class are called instance methods. Objects are instance variables or methods when they can be used by any object that is initialized as part of a class. Once we start manipulating @words in one method, other methods can take the manipulated version and mess with it. That is not the case for local variables, which can only be used in the method where they are defined. </p>

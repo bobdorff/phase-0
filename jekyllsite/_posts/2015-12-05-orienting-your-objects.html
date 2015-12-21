@@ -1,0 +1,46 @@
+---
+layout: post
+title:  "Orienting your objects: Or, hashing out the difference between Javascript objects and Ruby hashes"
+date:   2015-12-05
+categories: DBC blog
+---
+
+
+<p>
+		Over the past few weeks, we've gotten pretty familiar with hashes in Ruby. A hash is a list of items, and each individual item in the list has a unique identifier, or key. When you reference that key, you're able to retrieve its associated value from inside the hash. That's hugely useful when you need to store or organize information that you're going to need to reference again later on. There are several ways to create a Ruby hash, but one of the clearest is the implicit form, which looks something like this:
+	</p>	
+	<p>	
+		<code>
+			music_album = {
+				title: "WhatFunLifeWas",
+				artist: "Bedhead",
+				year: "1994",
+				genre: "Rock"
+			}
+		</code>
+	</p>
+	<p>
+			Once you've created a hash like this, you can always access the stored information by referencing the specific key you need. The key will always refer to the same value, and that consistency is really helpful when you start manipulating a lot of data. 
+	</p>
+	<p>
+			This type of data structure is so useful that it has an equivalent in JavaScript, though the JavaScript construction isn't called a hash. Instead, JavaScript has "objects", which work a bit differently than a Ruby hash. It's worth noting that everything in JavaScript is an object, but certain objects can contain a data structure that works like a hash. To make things a bit clearer, let's look at how we'd make an object in JavaScript:
+	</p>
+	<p>
+		<code>
+			var music_album = {
+				title: "WhatFunLifeWas",
+				artist: "Bedhead",
+				year: "1994",
+				genre: "Rock"
+			}
+		</code>
+	</p>	
+    <p>
+    		The structure here is very similar to how we made our Ruby hash, though we do have to let JavaScript know that we're naming a variable with the "var" at the beginning of the code. From here, the object will work like a hash with some additional capabilities. JavaScript lets you access object's values with either dot notation or bracket notation, while Ruby only lets you use brackets. That means that <code>music_album.title</code> will deliver "WhatFunLifeWas" in JavaScript. In Ruby you have to use <code>music_album[title]</code> to get the same information. That notation will also work in in JavaScript. 
+    </p>	
+    <p>
+    		Beyond letting you access the info inside an object in different ways, JavaScript lets you put more types of informating into its data structures. In JavaScript, you can create functions inside your objects and call them like any other value that's stored in the object. 
+    </p>
+    <p>
+    		As is probably clear by now, the big difference between Ruby hashes and JavaScript objects seems to be flexibility. A JavaScript class can do what a hash does and has other capabilities. That complexity can be overwhelming, but it also means that objects have more uses throughout JavaScript code. 
+    </p>
