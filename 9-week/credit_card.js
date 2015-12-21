@@ -85,3 +85,17 @@ var checkCard = function(number){
 checkCard(invalid);
 checkCard(valid);
 
+REFLECTION
+What concepts did you solidify in working on this challenge? 
+	I got better at seeing how different elements of the JavaScript language could be used to solve a problem. 
+	Even as I pseudocoded, I had a good sense of how I could break the problem down in smaller components, and 
+	saw from the start how to call those elements and put them together.
+What was the most difficult part of this challenge?
+	Refactoring is always the most difficult part of challenges for me. I really need to come at the problem
+	with fresh eyes, otherwise I find that it's difficult to break out of my original way of thinking. 
+Did you solve the problem in a new way this time?
+	I think this solution is cleaner overall, but it feels a bit more cluttered because I wasn't able to use built in ruby methods
+	I did have to really think through every part of problem, though, which was beneficial. 
+Was your pseudocode different from the Ruby version? What was the same and what was different?
+	I think writing in JS has made me a better pseudocoder because it requires me to think through things that it's easy to
+	gloss over when you're working with built in ruby methods. 
